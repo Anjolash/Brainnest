@@ -1,0 +1,8 @@
+set(CMAKE_CXX_EXTENSIONS off)
+set(CMAKE_CXX_STANDARD 20)
+if(CMAKE_C_COMPILER_ID MATCHES "^(GNU|Clang)$")
+    add_compile_options(-Wall -Wextra -Wconversion -pedantic)
+endif()
+add_compile_definitions(_XOPEN_SOURCE=700)
+add_executable(prog main.cpp utils.cpp)
+add_custom_target(run "./prog")
